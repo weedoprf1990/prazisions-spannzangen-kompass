@@ -79,8 +79,8 @@ function Spannzangen() {
             <li key={i} className="border-l-2 border-signal bg-card px-4 py-3 text-foreground">{i}</li>
           ))}
         </ul>
-        <a href="https://web.archive.org/web/2024/http://www.ferrer-its.com/wp-content/uploads/2017/01/K-1.1.1-Catalogue_ETS_ETA_2017.pdf" target="_blank" rel="noopener" className="inline-block border-b-2 border-signal pb-1 font-medium text-foreground">
-          Katalog ETS & ETA (PDF) →
+        <a href="/downloads/ferrer-katalog-ets-eta-2017.pdf" target="_blank" rel="noopener" className="inline-block border-b-2 border-signal pb-1 font-medium text-foreground">
+          Katalog ETS/ETA (PDF, 2,5 MB) →
         </a>
       </Section>
 
@@ -109,8 +109,8 @@ function Spannzangen() {
             <span key={s} className="rounded-sm bg-secondary px-3 py-1.5 font-mono text-sm text-foreground">{s}</span>
           ))}
         </div>
-        <a href="https://web.archive.org/web/2024/http://www.ferrer-its.com/wp-content/uploads/2017/01/Catalogue_PCB_Collets_2014.pdf" target="_blank" rel="noopener" className="inline-block border-b-2 border-signal pb-1 font-medium text-foreground">
-          Katalog PCB Spannzangen (PDF) →
+        <a href="/downloads/ferrer-katalog-pcb-2014.pdf" target="_blank" rel="noopener" className="inline-block border-b-2 border-signal pb-1 font-medium text-foreground">
+          Katalog PCB-Spannzangen (PDF, 1,8 MB) →
         </a>
       </Section>
 
