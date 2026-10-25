@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 
-const read = (path: string) => readFileSync(new URL(`../../${path}`, import.meta.url), "utf8");
+const read = (path: string) => readFileSync(`${process.cwd()}/${path}`, "utf8");
 const workflow = read(".github/workflows/deploy.yml");
 const config = read("vite.config.ts");
 
