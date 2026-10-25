@@ -19,7 +19,7 @@
  */
 
 @theme inline {
-  --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Exo 2", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   --color-steel: var(--steel);
@@ -70,12 +70,12 @@
 :root {
   --radius: 0.25rem;
   --background: oklch(0.975 0.004 240);
-  --foreground: oklch(0.2 0.012 250);
+  --foreground: oklch(0.22 0.05 266);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.2 0.012 250);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.2 0.012 250);
-  --primary: oklch(0.22 0.014 250);
+  --primary: oklch(0.31 0.085 266);
   --primary-foreground: oklch(0.98 0.003 240);
   --secondary: oklch(0.93 0.006 240);
   --secondary-foreground: oklch(0.22 0.014 250);
@@ -87,10 +87,10 @@
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.88 0.006 240);
   --input: oklch(0.88 0.006 240);
-  --ring: oklch(0.72 0.17 55);
-  --steel: oklch(0.17 0.012 250);
-  --signal: oklch(0.72 0.17 55);
-  --signal-foreground: oklch(0.17 0.012 250);
+  --ring: oklch(0.6 0.22 22);
+  --steel: oklch(0.31 0.085 266);
+  --signal: oklch(0.6 0.22 22);
+  --signal-foreground: oklch(0.99 0 0);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
