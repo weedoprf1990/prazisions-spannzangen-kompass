@@ -6,13 +6,14 @@ const workflow = read(".github/workflows/deploy.yml");
 const config = read("vite.config.ts");
 
 describe("GitHub Pages hosting", () => {
-  it("deploys main using Node 20", () => {
+  it("deploys main using Bun", () => {
     expect(workflow).toContain("branches: [main]");
-    expect(workflow).toContain("node-version: '20'");
+    expect(workflow).toContain("uses: oven-sh/setup-bun@v2");
+    expect(workflow).toContain("bun-version: latest");
   });
-  it("uses npm ci with a lockfile and npm install otherwise before building", () => {
-    expect(workflow).toMatch(/if \[ -f package-lock\.json \].*\n\s+npm ci\n\s+else\n\s+npm install/);
-    expect(workflow).toContain("run: npm run build");
+  it("installs with frozen lockfile, falls back, then builds with bun", () => {
+    expect(workflow).toContain("bun install --frozen-lockfile || bun install");
+    expect(workflow).toContain("run: bun run build");
   });
   it("grants Pages deployment permissions", () => {
     for (const permission of ["contents: read", "pages: write", "id-token: write"]) {
