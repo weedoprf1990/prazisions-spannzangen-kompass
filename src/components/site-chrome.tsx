@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import logo from "@/assets/ferrer-logo.png";
 
 const nav = [
   { to: "/", label: "Unternehmen" },
@@ -8,25 +9,25 @@ const nav = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-primary-foreground/10 bg-steel/95 text-primary-foreground backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link to="/" className="flex items-baseline gap-2">
-          <span className="font-display text-xl font-extrabold tracking-tight">FERRER</span>
-          <span className="font-mono text-xs text-signal">ITS</span>
+    <header className="sticky top-0 z-50 bg-card/95 backdrop-blur">
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
+        <Link to="/" aria-label="Ferrer ITS – Startseite">
+          <img src={logo} alt="Ferrer Industrial Trade & Services" width={558} height={100} className="h-10 w-auto" />
         </Link>
-        <nav className="flex items-center gap-1 text-sm">
+        <nav className="flex items-center gap-1 text-sm font-medium">
           {nav.map((n) => (
             <Link
               key={n.to}
               to={n.to}
               activeOptions={{ exact: true }}
-              className="rounded-sm px-3 py-2 text-primary-foreground/70 transition-colors hover:text-primary-foreground data-[status=active]:text-signal"
+              className="rounded-sm px-3 py-2 text-foreground/70 transition-colors hover:text-signal data-[status=active]:text-signal"
             >
               {n.label}
             </Link>
           ))}
         </nav>
       </div>
+      <div className="h-1.5 bg-signal [clip-path:polygon(0_0,100%_0,calc(100%-12px)_100%,0_100%)]" />
     </header>
   );
 }
