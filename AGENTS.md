@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- GitHub Pages builds use GITHUB_PAGES=true to prerender all public content routes without Nitro; the workflow promotes dist/client to dist and excludes server output because Pages is static-only. Keep this route list current when adding public pages and keep the normal Lovable build target unchanged.

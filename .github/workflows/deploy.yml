@@ -1,0 +1,62 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+      - name: Build static website
+        run: npm run build
+        env:
+          GITHUB_PAGES: 'true'
+      - name: Prepare dist for Pages
+        run: |
+          # TanStack emits browser assets and prerendered HTML into dist/client.
+          # Publish only those files, never the server bundle.
+          test -f dist/client/index.html
+          mv dist/client "$RUNNER_TEMP/ferrer-pages"
+          rm -rf dist
+          mv "$RUNNER_TEMP/ferrer-pages" dist
+          test -f dist/spannzangen/index.html
+          test -f dist/kontakt/index.html
+          cp dist/index.html dist/404.html
+          cp public/CNAME dist/CNAME
+          cp public/.nojekyll dist/.nojekyll
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
