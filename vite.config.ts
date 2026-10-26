@@ -13,7 +13,13 @@ export default defineConfig({
   tanstackStart: {
     ...(process.env["GITHUB_PAGES"] === "true"
       ? {
-          pages: [{ path: "/" }, { path: "/spannzangen" }, { path: "/kontakt" }],
+          pages: [
+            { path: "/" },
+            { path: "/spannzangen" },
+            { path: "/kontakt" },
+            { path: "/impressum" },
+            { path: "/datenschutz" },
+          ],
           prerender: { enabled: true, autoStaticPathsDiscovery: false },
         }
       : {}),

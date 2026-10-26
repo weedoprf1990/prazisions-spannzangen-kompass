@@ -40,6 +40,14 @@ export function SiteFooter() {
           <span className="font-display font-bold text-primary-foreground">Ferrer ITS</span> –
           Industrial Trade &amp; Services. Präzisions Spannzangen von Tecnopinz, Swiss Made.
         </p>
+        <nav className="flex items-center gap-4" aria-label="Rechtliches">
+          <Link to="/impressum" className="transition-colors hover:text-primary-foreground">
+            Impressum
+          </Link>
+          <Link to="/datenschutz" className="transition-colors hover:text-primary-foreground">
+            Datenschutz
+          </Link>
+        </nav>
         <p className="font-mono text-xs">© {new Date().getFullYear()} Ferrer ITS</p>
       </div>
     </footer>

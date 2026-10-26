@@ -2,9 +2,9 @@
 
 ## Rechtstexte
 
-- [ ] Impressum, AGB und Datenschutzerklärung der alten Ferrer-ITS-Website recherchieren und verfügbare Originaltexte übernehmen.
-- [ ] Rechtliche Seiten im Footer verlinken und für GitHub Pages einbeziehen.
-- [ ] Seitenaufrufe und vorhandene Tests prüfen; fehlende Originaltexte oder notwendige Aktualisierungen benennen.
+- [x] Impressum und Datenschutzerklärung der alten Ferrer-ITS-Website aus dem Webarchiv übernommen (AGB existierte dort nicht).
+- [x] Rechtliche Seiten im Footer verlinkt und in den GitHub-Pages-Prerender-Build aufgenommen.
+- [ ] AGB: auf der alten Website nicht vorhanden – Originaltext vom Kunden anfordern oder neu erstellen lassen.
 
 - [x] Add Node 20 deployment workflow for pushes to main with npm lockfile detection and Pages permissions.
 - [x] Generate static HTML for all existing pages and publish only browser files from dist.

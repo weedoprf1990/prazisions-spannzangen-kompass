@@ -39,7 +39,7 @@ describe("GitHub Pages hosting", () => {
     expect(workflow).toContain("cp public/.nojekyll dist/.nojekyll");
   });
   it("prerenders each existing public route and removes server output from the artifact", () => {
-    for (const path of ["/", "/spannzangen", "/kontakt"]) {
+    for (const path of ["/", "/spannzangen", "/kontakt", "/impressum", "/datenschutz"]) {
       expect(config).toContain(`{ path: "${path}" }`);
     }
     expect(config).toContain("autoStaticPathsDiscovery: false");
